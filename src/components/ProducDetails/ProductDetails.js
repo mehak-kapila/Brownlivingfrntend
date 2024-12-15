@@ -25,7 +25,7 @@ const ProductDetails = () => {
 
   //   fetchProduct();
   // }, [id]);
-  const url = "https://sai-goutham-brown-living-backend.onrender.com/api/products/"
+  const url = "http://localhost:5000/api/products/"
   
   const [product, setProduct] = useState([]);
   useEffect(() => {
