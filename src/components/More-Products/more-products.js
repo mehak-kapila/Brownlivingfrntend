@@ -16,7 +16,7 @@ const Moreroducts = () => {
   const [moreProducts, setMoreProducts] = useState([]);
   const [moreProductsImage, setMoreProductsImage] = useState();
 
-  const url = "http://localhost:5000/api/products";
+  const url = "https://sai-goutham-brown-living-backend.onrender.com/api/products";
 
   useEffect(() => {
     // Fetch products from an API or use static data
@@ -163,6 +163,7 @@ const Moreroducts = () => {
       product.quantity = 1;
       const response = await axios.post(`${url}/addToCart`, product);
       console.log(response.data);
+      alert(response.data.message)
     } catch (error) {
       console.error('Error posting product:', error);
       // Handle error accordingly
@@ -765,105 +766,105 @@ const Moreroducts = () => {
                     Personalised
                   </span>
                   <ul className={`submenu-list-more-products ${isGPrsonalisedExpanded ? "expanded-more-products" : ""}`}>
-                        <li className="care-item" onClick={(e) => {
-                          e.preventDefault(); // Prevent default anchor behavior
-                          handleNavigation("corporate-gifts", "products"); // Pass category
-                        }}>For Employee</li>
-                        <li className="care-item" onClick={(e) => {
-                          e.preventDefault(); // Prevent default anchor behavior
-                          handleNavigation("gifts-for-her", "products"); // Pass category
-                        }}>For Her</li>
-                        <li className="care-item" onClick={(e) => {
-                          e.preventDefault(); // Prevent default anchor behavior
-                          handleNavigation("gifts-for-him", "products"); // Pass category
-                        }}>For Him</li>
-                        <li className="care-item" onClick={(e) => {
-                          e.preventDefault(); // Prevent default anchor behavior
-                          handleNavigation("gifts-for-kids", "products"); // Pass category
-                        }}>For Kids</li>
-                        <li className="care-item" onClick={(e) => {
-                          e.preventDefault(); // Prevent default anchor behavior
-                          handleNavigation("sustainable-pet-care", "products"); // Pass category
-                        }}>For Pets</li>
-                        <li className="care-item" onClick={(e) => {
-                          e.preventDefault(); // Prevent default anchor behavior
-                          handleNavigation("sustainable-gifts-for-plant-lovers", "products"); // Pass category
-                        }}>For Plant Lovers</li>
-                      </ul>
+                    <li className="care-item" onClick={(e) => {
+                      e.preventDefault(); // Prevent default anchor behavior
+                      handleNavigation("corporate-gifts", "products"); // Pass category
+                    }}>For Employee</li>
+                    <li className="care-item" onClick={(e) => {
+                      e.preventDefault(); // Prevent default anchor behavior
+                      handleNavigation("gifts-for-her", "products"); // Pass category
+                    }}>For Her</li>
+                    <li className="care-item" onClick={(e) => {
+                      e.preventDefault(); // Prevent default anchor behavior
+                      handleNavigation("gifts-for-him", "products"); // Pass category
+                    }}>For Him</li>
+                    <li className="care-item" onClick={(e) => {
+                      e.preventDefault(); // Prevent default anchor behavior
+                      handleNavigation("gifts-for-kids", "products"); // Pass category
+                    }}>For Kids</li>
+                    <li className="care-item" onClick={(e) => {
+                      e.preventDefault(); // Prevent default anchor behavior
+                      handleNavigation("sustainable-pet-care", "products"); // Pass category
+                    }}>For Pets</li>
+                    <li className="care-item" onClick={(e) => {
+                      e.preventDefault(); // Prevent default anchor behavior
+                      handleNavigation("sustainable-gifts-for-plant-lovers", "products"); // Pass category
+                    }}>For Plant Lovers</li>
+                  </ul>
                 </li>
                 <li>
                   <span onClick={() => toggleCareMenu(setisGOccationExpanded, isGOccationExpanded)}>
                     By Occasion
                   </span>
                   <ul className={`submenu-list-more-products ${isGOccationExpanded ? "expanded-more-products" : ""}`}>
-                        <li className="care-item" onClick={(e) => {
-                          e.preventDefault(); // Prevent default anchor behavior
-                          handleNavigation("gifts-for-mothers-day", "products"); // Pass category
-                        }}>Mother's Day</li>
-                        <li className="care-item" onClick={(e) => {
-                          e.preventDefault(); // Prevent default anchor behavior
-                          handleNavigation("gifts-for-anniversaries", "products"); // Pass category
-                        }}>Anniversary</li>
-                        <li className="care-item" onClick={(e) => {
-                          e.preventDefault(); // Prevent default anchor behavior
-                          handleNavigation("sustainable-baby-gifts", "products"); // Pass category
-                        }}>Baby Shower</li>
-                        <li className="care-item" onClick={(e) => {
-                          e.preventDefault(); // Prevent default anchor behavior
-                          handleNavigation("sustainable-birthday-gifts", "products"); // Pass category
-                        }}>Birthday</li>
-                        <li className="care-item" onClick={(e) => {
-                          e.preventDefault(); // Prevent default anchor behavior
-                          handleNavigation("christmas-giftsnav", "products"); // Pass category
-                        }}>Christmas</li>
-                        <li className="care-item" onClick={(e) => {
-                          e.preventDefault(); // Prevent default anchor behavior
-                          handleNavigation("eco-friendly-diwali-gifts", "products"); // Pass category
-                        }}>Diwali</li>
-                        <li className="care-item" onClick={(e) => {
-                          e.preventDefault(); // Prevent default anchor behavior
-                          handleNavigation("sustainable-fathers-day-gifts", "products"); // Pass category
-                        }}>Father's Day</li>
-                        <li className="care-item" onClick={(e) => {
-                          e.preventDefault(); // Prevent default anchor behavior
-                          handleNavigation("eco-friendly-ganesh-chaturthi-essentials", "products"); // Pass category
-                        }}>Ganesh Chaturthi</li>
-                        <li className="care-item" onClick={(e) => {
-                          e.preventDefault(); // Prevent default anchor behavior
-                          handleNavigation("gifts-for-holi", "products"); // Pass category
-                        }}>Holi</li>
-                        <li className="care-item" onClick={(e) => {
-                          e.preventDefault(); // Prevent default anchor behavior
-                          handleNavigation("eco-friendly-home-decor", "products"); // Pass category
-                        }}>House Warming</li>
-                        <li className="care-item" onClick={(e) => {
-                          e.preventDefault(); // Prevent default anchor behavior
-                          handleNavigation("gifts-for-office-parties", "products"); // Pass category
-                        }}>Office Party</li>
-                        <li className="care-item" onClick={(e) => {
-                          e.preventDefault(); // Prevent default anchor behavior
-                          handleNavigation("gifts-for-raksha-bandhan", "products"); // Pass category
-                        }}>Raksha Bandhan</li>
-                        <li className="care-item" onClick={(e) => {
-                          e.preventDefault(); // Prevent default anchor behavior
-                          handleNavigation("gifts-for-get-togethers", "products"); // Pass category
-                        }}>Social Events</li>
-                        <li className="care-item" onClick={(e) => {
-                          e.preventDefault(); // Prevent default anchor behavior
-                          handleNavigation("gifts-for-valentines-day", "products"); // Pass category
-                        }}>Valentine's Day</li>
-                        <li className="care-item" onClick={(e) => {
-                          e.preventDefault(); // Prevent default anchor behavior
-                          handleNavigation("gifts-for-weddings", "products"); // Pass category
-                        }}>Wedding Favours</li>
-                      </ul>
+                    <li className="care-item" onClick={(e) => {
+                      e.preventDefault(); // Prevent default anchor behavior
+                      handleNavigation("gifts-for-mothers-day", "products"); // Pass category
+                    }}>Mother's Day</li>
+                    <li className="care-item" onClick={(e) => {
+                      e.preventDefault(); // Prevent default anchor behavior
+                      handleNavigation("gifts-for-anniversaries", "products"); // Pass category
+                    }}>Anniversary</li>
+                    <li className="care-item" onClick={(e) => {
+                      e.preventDefault(); // Prevent default anchor behavior
+                      handleNavigation("sustainable-baby-gifts", "products"); // Pass category
+                    }}>Baby Shower</li>
+                    <li className="care-item" onClick={(e) => {
+                      e.preventDefault(); // Prevent default anchor behavior
+                      handleNavigation("sustainable-birthday-gifts", "products"); // Pass category
+                    }}>Birthday</li>
+                    <li className="care-item" onClick={(e) => {
+                      e.preventDefault(); // Prevent default anchor behavior
+                      handleNavigation("christmas-giftsnav", "products"); // Pass category
+                    }}>Christmas</li>
+                    <li className="care-item" onClick={(e) => {
+                      e.preventDefault(); // Prevent default anchor behavior
+                      handleNavigation("eco-friendly-diwali-gifts", "products"); // Pass category
+                    }}>Diwali</li>
+                    <li className="care-item" onClick={(e) => {
+                      e.preventDefault(); // Prevent default anchor behavior
+                      handleNavigation("sustainable-fathers-day-gifts", "products"); // Pass category
+                    }}>Father's Day</li>
+                    <li className="care-item" onClick={(e) => {
+                      e.preventDefault(); // Prevent default anchor behavior
+                      handleNavigation("eco-friendly-ganesh-chaturthi-essentials", "products"); // Pass category
+                    }}>Ganesh Chaturthi</li>
+                    <li className="care-item" onClick={(e) => {
+                      e.preventDefault(); // Prevent default anchor behavior
+                      handleNavigation("gifts-for-holi", "products"); // Pass category
+                    }}>Holi</li>
+                    <li className="care-item" onClick={(e) => {
+                      e.preventDefault(); // Prevent default anchor behavior
+                      handleNavigation("eco-friendly-home-decor", "products"); // Pass category
+                    }}>House Warming</li>
+                    <li className="care-item" onClick={(e) => {
+                      e.preventDefault(); // Prevent default anchor behavior
+                      handleNavigation("gifts-for-office-parties", "products"); // Pass category
+                    }}>Office Party</li>
+                    <li className="care-item" onClick={(e) => {
+                      e.preventDefault(); // Prevent default anchor behavior
+                      handleNavigation("gifts-for-raksha-bandhan", "products"); // Pass category
+                    }}>Raksha Bandhan</li>
+                    <li className="care-item" onClick={(e) => {
+                      e.preventDefault(); // Prevent default anchor behavior
+                      handleNavigation("gifts-for-get-togethers", "products"); // Pass category
+                    }}>Social Events</li>
+                    <li className="care-item" onClick={(e) => {
+                      e.preventDefault(); // Prevent default anchor behavior
+                      handleNavigation("gifts-for-valentines-day", "products"); // Pass category
+                    }}>Valentine's Day</li>
+                    <li className="care-item" onClick={(e) => {
+                      e.preventDefault(); // Prevent default anchor behavior
+                      handleNavigation("gifts-for-weddings", "products"); // Pass category
+                    }}>Wedding Favours</li>
+                  </ul>
                 </li>
               </ul>
             </li>
             <li className="me`nu-item-more-products" onClick={(e) => {
-                          e.preventDefault(); // Prevent default anchor behavior
-                          handleNavigation("green-friday-sale", "products"); // Pass category
-                        }}>SALE 💚</li>
+              e.preventDefault(); // Prevent default anchor behavior
+              handleNavigation("green-friday-sale", "products"); // Pass category
+            }}>SALE 💚</li>
           </ul>
         </aside>
         {/* Main Content */}
@@ -944,17 +945,21 @@ const Moreroducts = () => {
           >
             {moreProducts.map((product) => (
               <div key={product.id} className="product-card-more-products"
-                onClick={(e) => {
+              >
+                <div onClick={(e) => {
                   e.preventDefault(); // Prevent default anchor behavior
                   handleNavigation(product._id, "pDetails"); // Pass category
                 }}>
-                <img
-                  className="product-image-more-products"
-                  src={product?.image}
-                  alt={product.name}
-                />
-                <div className="product-info-more-products">
-                  <h3 className="product-title-more-products">{product.title}</h3>
+                  <img
+                    className="product-image-more-products"
+                    src={product?.image}
+                    alt={product.name}
+                  />
+                  <div className="product-info-more-products">
+                    <h3 className="product-title-more-products">{product.title}</h3>
+                  </div>
+                  </div>
+
                   <p className="product-price-more-products product-price">
                     ₹{product.priceCurrent}
                     {product.priceOld && (
@@ -967,7 +972,7 @@ const Moreroducts = () => {
                   {product.title && (
                     <button className="quick-view-more-products">Quick View</button>
                   )}
-                </div>
+               
               </div>
             ))}
           </div>
