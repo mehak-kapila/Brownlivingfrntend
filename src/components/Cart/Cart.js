@@ -42,7 +42,7 @@ useEffect(() => {
     console.log(item)
 
     try {
-      const response = await axios.put(`https://sai-goutham-brown-living-backend.onrender.com/api/products/cart/${change}`, {
+      const response = await axios.put(`http://localhost:5000/api/products/cart/${change}`, {
         id : item._id, user: item.user // Replace with dynamic username
       });
       console.log(response, 'response')
@@ -58,7 +58,7 @@ useEffect(() => {
 
 
     try {
-      const response = await axios.delete("https://sai-goutham-brown-living-backend.onrender.com/api/products/cart/remove", {
+      const response = await axios.delete("http://localhost:5000/api/products/cart/remove", {
         data: { user: item.user, title: item.title, id : item._id }, // Replace with dynamic username
       });
       setCart(response.data); // Update cart state with the response

@@ -76,10 +76,11 @@ const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [logedInUser, setLogedInUser] = useState();
 
+
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("https://sai-goutham-brown-living-backend.onrender.com/api/user/login", { email, password });
+      const response = await axios.post("http://localhost:5000/api/user/login", { email, password });
       localStorage.setItem("token", response.data.token);
       localStorage.setItem("user", response.data.user);
       setLogedInUser(localStorage.getItem("user"));
@@ -97,7 +98,12 @@ const Header = () => {
     setIsLoggedIn(false);
     setLogedInUser(null)
     setMessage("Logged out successfully!");
+    navigate("/");
   };
+
+  const getUser = () =>{
+    return localStorage.getItem("user")
+  }
 
 
 
@@ -133,6 +139,8 @@ const Header = () => {
   const handleNavigation = (category) => {
     navigate(`/products/${category}`);
     window.location.reload();
+    // setLogedInUser(localStorage.getItem("user"));
+    // console.log(localStorage.getItem("user"))
   };
 
 
@@ -197,17 +205,21 @@ const Header = () => {
         <div className="header-icons">
 
           <button className='login-signup' onClick={handleToggle}>
-            {logedInUser ? logedInUser :
+          {/* {console.log(localStorage.getItem("user"), "testlogin")} */}
+            {getUser() ? getUser() :
               <span> Login/Sign up <p>My Account <IoIosArrowDown /></p> </span>
             }
           </button>
+
+
+        
 
           <div onClick={(e) => e.stopPropagation()} style={{
             display: display,
             zIndex: zIndex,
             visibility:visibiliy
           }} className="login-dropdown">
-            {!isLoggedIn ? (
+            {!getUser() ? (
               <form onSubmit={handleLogin}>
                 <h3 className='black'>Login to my account</h3>
                 <input
